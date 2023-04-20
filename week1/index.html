@@ -5,24 +5,112 @@
         <title>First Webpage Wow!</title>
         <meta charset="utf-8" />
         <link rel="shortcut icon" href="#">
+        <!-- My css-->
         <link rel="stylesheet" href="styles/style.css">
+        <!-- Leaflet's css-->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <!-- Leaflet's JavaScript-->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     </head>
 
     <body>
         <h1>My WebPage</h1>
         <div class="main">
-            <h3>Introduction</h3>
-            <p>Hello! My name is Emma Lee, 3rd year Cognitive Science major!</p>
-            <p>My goal as a critical digital map maker is to present information in an
-                understandable way for readers while also retaining accuracy.
-            </p>
+            <div id = "contents">
+                <h3>Introduction</h3>
+                <p>Hello! My name is Emma Lee, 3rd year Cognitive Science major!</p>
+                <p>My goal as a critical digital map maker is to present information in an
+                    understandable way for readers while also retaining accuracy.
+                </p>
 
-            <img src="https://i.pinimg.com/564x/f6/eb/a1/f6eba1eb6d51afb39eaf9784301274c4.jpg">
-    
-            <p><img src="C:\Users\emmae\Pictures\Isabella\colored-06.png" alt="[self-portrait failed picture]"></p>
-    
-            <h3>Currently Watching:</h3>
+                <img src="https://i.pinimg.com/564x/f6/eb/a1/f6eba1eb6d51afb39eaf9784301274c4.jpg">
+                <!-- <p><img src="C:\Users\emmae\Pictures\Isabella\colored-06.png" alt="[self-portrait failed picture]"></p> -->
+                
+                <br>
+
+                <h3>Shows I've Watched</h3>
+                <table>
+                    <tr>
+                        <th colspan="2" style="background-color: rgb(200, 255, 200);">Only Seen Episode 1</th>
+                        <th colspan="2" style="background-color: rgb(255, 255, 157);">Haven't Finished</th>
+                        <th colspan="2" style="background-color: rgb(248, 125, 125);">Waiting for More</th>
+                    </tr>
+                    <tr>
+                        <th style="background-color: rgb(155, 155, 155)">Name</th>
+                        <th style="background-color: rgb(194, 194, 194)">Location</th>
+                        <th style="background-color: rgb(155, 155, 155)">Name</th>
+                        <th style="background-color: rgb(194, 194, 194)">Location</th>
+                        <th style="background-color: rgb(155, 155, 155)">Name</th>
+                        <th style="background-color: rgb(194, 194, 194)">Location</th>
+                    </tr>
+                    <tr>
+                        <!-- Watched Episode 1--> 
+                        <td><i>The Chosen</i></td>
+                        <td>Judaea and Galilee</td>
+                        <!-- Haven't Finished--> 
+                        <td><i>Love is War</i></td>
+                        <td>Japan</td>
+                        <!-- Waiting for More--> 
+                        <td><i>Miraculous</i></td>
+                        <td>Paris, France</td>
+                    </tr>
+                    <tr>
+                        <!-- Watched Episode 1--> 
+                        <td><i>Demon Slayer</i></td>
+                        <td>Japan</td>
+                        <!-- Haven't Finished--> 
+                        <td><i>Extraordinary Attorney Woo</i></td>
+                        <td>South Korea</td>
+                        <!-- Waiting for More-->
+                        <td><i>SPY X FAMILY</i></td>
+                        <td>Berlin, Germany</td>
+
+                    </tr>
+                    <tr>
+                        <!-- Watched Episode 1--> 
+                        <td></td>
+                        <td></td>
+                        <!-- Haven't Finished--> 
+                        <td><i>Jujutsu Kaisen</i></td>
+                        <td>Kawasaki City, Japan</td>
+                        <!-- Waiting for More-->
+                        <td><i>MHA</i></td>
+                        <td>Japan</td>
+                    </tr>
+
+                </table>
+
+                <br>
+                <br>
+
+                <div id="the_map"></div>
+            
+                <br>
+                <p> My other <a href = "https://chrysanthemma.github.io/asainam191a-labs/week1/newpage.html">secret HTML website</a>!</p>
+            </div>
+            <!--
+            <h3>Want to Watch Playing in...</h3>
+            <ul>
+                <li><a href="https://www.fandango.com/the-super-mario-bros-movie-2023-229649/movie-overview?cmp=SMBBOGOVanExperiencerUnbounce%2FUniversal~Fandango~SMBBOGOVanExperience&date=2023-04-13">
+                    Westwood 
+                </a></li>
+                <li><a href="https://www.fandango.com/suzume-2023-231372/movie-overview">
+                    Century City
+                </a></li>
+            </ul>
+
+            
+                    <div id="footer">
+            Copyright(2022)
+        </div>
+        </div>-->
+
+    </body>
+    <script src="init1.js"></script>
+</html>
+
+<!--
+<h3>Currently Watching:</h3>
             <ul>
                 <li>Just Started (aka EP1):
                     <ol>
@@ -49,21 +137,4 @@
                 </li>
             </ul>
 
-            <h3>Want to Watch Playing in...</h3>
-            <ul>
-                <li><a href="https://www.fandango.com/the-super-mario-bros-movie-2023-229649/movie-overview?cmp=SMBBOGOVanExperiencerUnbounce%2FUniversal~Fandango~SMBBOGOVanExperience&date=2023-04-13">
-                    Westwood 
-                </a></li>
-                <li><a href="https://www.fandango.com/suzume-2023-231372/movie-overview">
-                    Century City
-                </a></li>
-            </ul>
-
-            <a href = "https://chrysanthemma.github.io/asainam191a-labs/week1/newpage.html">My other HTML website!</a>
-        </div>
-
-        <div id="footer">
-            Copyright(2022)
-        </div>
-    </body>
-</html>
+-->
