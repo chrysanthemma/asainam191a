@@ -1,0 +1,41 @@
+body{
+    display: grid;
+    grid-auto-rows: auto 1fr;
+    grid-template-areas: "header" "main_content" "footer";
+    background-color: rgb(180, 144, 180);
+}
+
+header{
+    grid-area: header;
+}
+
+#footer{
+    grid-area: footer;
+}
+
+h2, h3, p{
+    text-align: center; 
+}
+
+.main{
+    grid-area: main_content;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "content main_map"
+        "content buttons";
+    display: grid;
+}
+
+#contents{
+    grid-area: content;
+}
+
+#the_map{
+    height:80vh;
+    grid-area: main_map;
+}
+
+#buttons {
+    margin-left: auto; 
+    margin-right: 0;
+}
