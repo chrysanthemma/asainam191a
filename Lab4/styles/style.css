@@ -17,6 +17,10 @@ h2, h3, p{
     text-align: center; 
 }
 
+h3{
+    color:cornflowerblue
+}
+
 .main{
     grid-area: main_content;
     grid-template-columns: 1fr 1fr;
