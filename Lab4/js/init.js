@@ -43,7 +43,7 @@ function processData(results){
         console.log(data);
         if (data['First Name'] && data["What is a special location to you?"] !== "")
         {
-            let dataTitle = data['First Name'] + "'s " + data['What\'s one adjective to describe your place?']+ " Place:"; 
+            let dataTitle = data['First Name'] + "'s " + data['What\'s one adjective to describe your place?']+ " Place"; 
             let dataMessage = "\"" + data['Why did you choose this location? '] + "\"";
             let dataLocation = data["What is a special location to you?"];
             addMarker(data.lat,data.lng,dataTitle,dataLocation,dataMessage);
