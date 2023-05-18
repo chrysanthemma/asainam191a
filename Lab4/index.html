@@ -6,6 +6,9 @@
         <meta charset="utf-8" />
         <link rel="shortcut icon" href="#">
         <link rel="stylesheet" href="styles/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
 
         <!-- Leaflet's css-->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -16,18 +19,31 @@
     </head>
 
     <body>
-        <header>
-            <!-- space for a menu -->
-        </header>
+        <div id = "header">
+            Special Places Map
+        </div> 
 
+        <!-- Everything Else -->
         <div class="main">
             <div id="contents">
-                <!-- Be sure to use your own survey here!!!!!!! -->
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfq4Xlv89IAK4_G04j6RUrew4gLH7RfNprvXBawc4GzSVzpPA/viewform?embedded=true" width="640" height="916" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+                <!-- Tab Testing -->
+                <div class="tab">
+                    <button class="tablinks" onclick="openCity(event, 'GoogleForm')" id="defaultOpen">Add Your Place</button>
+                    <button class="tablinks" onclick="openCity(event, 'OtherPlaces')">Explore Others' Places</button>
+                </div>
+                
+                <div id="GoogleForm" class="tabcontent">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfq4Xlv89IAK4_G04j6RUrew4gLH7RfNprvXBawc4GzSVzpPA/viewform?embedded=true" width="640" height="916" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                </div>
+                <div id="OtherPlaces" class="tabcontent">
+                    <div id="buttons"></div>
+                </div>
             </div>
+
             <div id="the_map"></div>
-            <div id="buttons"></div>
         </div>
+
         <div id="footer">
             <!-- Copyright(2023) -->
         </div>
