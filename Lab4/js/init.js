@@ -38,9 +38,18 @@ function createButtons(lat,lng,title,marker){
     spaceForButtons.appendChild(newButton); 
 
     // Button Styling
-    newButton.style.color = "#6c584c";
+    if (32.64500655777006 < lat && lat < 42.03470992037843 &&
+        -124.23540320418294 < lng && lng < -114.14680413455335)
+    {
+        newButton.style.backgroundColor = "#b1be9d";
+        newButton.style.color = "#edede9";
+    }
+    else{
+        newButton.style.backgroundColor = "#edede9";
+        newButton.style.color = "#b1be9d";
+    }
+
     newButton.style.fontSize = "12px";
-    newButton.style.backgroundColor = "#edede9";
     newButton.style.fontFamily = "";
     newButton.style.textAlign = "center";
     newButton.style.margin = "2px"
@@ -69,7 +78,7 @@ function processData(results){
         if (data['First Name'] && data["What is a special location to you?"] !== "")
         {
             let adj = data['What\'s one adjective to describe your place?'];
-            adj = adj.charAt(0).toUpperCase() + adj.slice(1);
+            // adj = adj.charAt(0).toUpperCase() + adj.slice(1);
             let dataTitle = data['First Name'] + "'s " + adj + " Place"; 
             let dataMessage = "\"" + data['Why did you choose this location? '] + "\"";
             let dataLocation = data["What is a special location to you?"];
