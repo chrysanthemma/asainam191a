@@ -4,9 +4,19 @@ let mapOptions = {'center': [38.534550,-121.752060],'zoom':7}
 // use the variables
 const map = L.map('the_map').setView(mapOptions.center, mapOptions.zoom);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+// New Map
+let CartoDB_VoyagerLabelsUnder = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+	subdomains: 'abcd',
+	maxZoom: 20
+});
+
+CartoDB_VoyagerLabelsUnder.addTo(map);
+
+// Old Map
+// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+// }).addTo(map);
 
 // create a function to add markers
 function addMarker(lat,lng,title,location,message){
@@ -27,35 +37,21 @@ function createButtons(lat,lng,title,marker){
     const spaceForButtons = document.getElementById("buttons");
     spaceForButtons.appendChild(newButton); 
 
-    // CSS Styling
-    // newButton.style.color = "#797d62";
+    // Button Styling
     newButton.style.color = "#6c584c";
     newButton.style.fontSize = "12px";
     newButton.style.backgroundColor = "#edede9";
     newButton.style.fontFamily = "";
     newButton.style.textAlign = "center";
-
-    // newButton.style.borderColor = "#9b9b7a";
-    // // newButton.style.borderRadius = "4px";
-    // newButton.style.borderStyle = "solid"
-    // newButton.style.borderWidth = "medium";
     newButton.style.margin = "2px"
-    // newButton.style.outline = "5px";
     newButton.style.paddingTop = "8px";
     newButton.style.paddingBottom = "8px";
-    // 16px
-
-    // newButton.style.lineHeight = "26px";
-    // newButton.style.display = "flex";
-    // newButton.style.flexDirection = "column"
     newButton.style.justifyContent = "center";
-    // newButton.style.flex = "auto";
     newButton.style.width = "30%";
     newButton.style.cursor = "pointer";
-    // newButton.style.float = "right";
-
 }
 
+//Data Stuff
 const dataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQgj_yTgLJpDOWXNJ8Cy5aBVE_kJCg582pauA0JJvi0sBJEVV-gDUR-Dn7Z-IzmDk048smwjlQBGMiu/pub?output=csv"
 
 function loadData(url){
@@ -72,7 +68,9 @@ function processData(results){
         console.log(data);
         if (data['First Name'] && data["What is a special location to you?"] !== "")
         {
-            let dataTitle = data['First Name'] + "'s " + data['What\'s one adjective to describe your place?']+ " Place"; 
+            let adj = data['What\'s one adjective to describe your place?'];
+            adj = adj.charAt(0).toUpperCase() + adj.slice(1);
+            let dataTitle = data['First Name'] + "'s " + adj + " Place"; 
             let dataMessage = "\"" + data['Why did you choose this location? '] + "\"";
             let dataLocation = data["What is a special location to you?"];
             addMarker(data.lat,data.lng,dataTitle,dataLocation,dataMessage);
@@ -82,7 +80,7 @@ function processData(results){
 
 loadData(dataUrl)
 
-// Copied Code (https://www.w3schools.com/howto/howto_js_tabs.asp)
+//Copied Code (https://www.w3schools.com/howto/howto_js_tabs.asp)
 
 document.getElementById("defaultOpen").click();
 
